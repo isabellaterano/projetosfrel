@@ -22,6 +22,7 @@ const ProjectList = ({ projects }) => {
               alt={project.name}
               className="w-full object-cover rounded-t-lg cursor-pointer transition-transform transform hover:scale-105"
               onClick={() => handleImageClick(project.image)}
+              loading="lazy"
             />
             <div className="p-8">
               <h2 className="text-xl font-semibold">{project.name}</h2>
@@ -55,7 +56,7 @@ const ProjectList = ({ projects }) => {
             <img
               src={selectedImage}
               alt="Selected"
-              className="max-w-[90%] max-h-[90%] rounded-lg" // Aumentando o tamanho da imagem
+              className="max-w-[90%] max-h-[90%] rounded-lg"
             />
             <button
               className="absolute -top-4 -right-60 text-white text-2xl"
