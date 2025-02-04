@@ -16,7 +16,7 @@ function App() {
       <h1 className="text-2xl font-bold my-8 mb-11 text-neutral-100 text-center max-w-screen-xl mx-auto">
         Explore uma seleção dos diversos projetos que criei ao longo dos anos,
         incluindo páginas de vendas, landing pages, sites institucionais,
-        multi-página, portfólios, blogs, aplicativos da web e muito mais.
+        Empresarial, portfólios, blogs, aplicativos da web e muito mais.
       </h1>
       <FilterMenu filter={filter} setFilter={setFilter} />
       <ProjectList projects={filteredProjects} />

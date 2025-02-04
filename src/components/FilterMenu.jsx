@@ -4,7 +4,7 @@ const FilterMenu = ({ filter, setFilter }) => {
       {[
         "All",
         "Landing Page",
-        "Multi-página",
+        "Empresarial",
         "Blog",
         "E-commerce",
         "Portfólio",

@@ -11,13 +11,16 @@ import image11 from "../assets/project11.png";
 import image12 from "../assets/project12.png";
 import image13 from "../assets/project13.png";
 import image14 from "../assets/project14.png";
+import image15 from "../assets/project15.png";
+import image16 from "../assets/project16.png";
+import image17 from "../assets/project17.png";
 
 const projectsData = [
   {
     id: 1,
     name: "Forge | Agência Digital",
     image: image2,
-    type: "Multi-página",
+    type: "Empresarial",
     url: "https://digitalagency-forge.netlify.app/",
   },
   {
@@ -52,7 +55,7 @@ const projectsData = [
     id: 6,
     name: "Skull Tattoo Studio",
     image: image5,
-    type: "Multi-página",
+    type: "Empresarial",
     url: "https://skulltattoostudio.netlify.app/",
   },
   {
@@ -73,7 +76,7 @@ const projectsData = [
     id: 10,
     name: "PetCare | Clínica Veterinária",
     image: image8,
-    type: "Multi-página",
+    type: "Empresarial",
     url: "https://petcareclinicavet.netlify.app/",
   },
   {
@@ -103,6 +106,27 @@ const projectsData = [
     image: image1,
     type: "E-commerce",
     url: "https://ecommerce-chair.onrender.com/",
+  },
+  {
+    id: 15,
+    name: "Aerolift",
+    image: image15,
+    type: "Empresarial",
+    url: "https://aerolift.com.br/",
+  },
+  {
+    id: 16,
+    name: "DPS Advogados",
+    image: image16,
+    type: "Landing Page",
+    url: "#",
+  },
+  {
+    id: 17,
+    name: "Omatic",
+    image: image17,
+    type: "Empresarial",
+    url: "https://omatic.com.br/",
   },
 ];
 
