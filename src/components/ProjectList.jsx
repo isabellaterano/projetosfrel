@@ -26,10 +26,23 @@ const ProjectList = ({ projects }) => {
             />
             <div className="p-8">
               <h2 className="text-xl font-semibold">{project.name}</h2>
-              <div className="flex justify-between mt-2">
-                <span className="inline-block mt-2 px-3 py-1 bg-gray-200 rounded-full text-sm">
-                  {project.type}
-                </span>
+              <div className="flex justify-between mt-2 items-center">
+                <div className="flex flex-wrap gap-2">
+                  {Array.isArray(project.type) ? (
+                    project.type.map((t, index) => (
+                      <span
+                        key={index}
+                        className="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm"
+                      >
+                        {t}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm">
+                      {project.type}
+                    </span>
+                  )}
+                </div>
                 <a
                   href={project.url}
                   target="_blank"
