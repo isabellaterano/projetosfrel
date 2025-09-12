@@ -18,6 +18,10 @@ import image18 from "../assets/project18.png";
 import image19 from "../assets/project19.png";
 import image20 from "../assets/project20.png";
 import image21 from "../assets/project21.png";
+import image22 from "../assets/project22.png";
+import image23 from "../assets/project23.png";
+import image24 from "../assets/project24.png";
+import image25 from "../assets/project25.png";
 
 const projectsData = [
   {
@@ -95,7 +99,7 @@ const projectsData = [
     name: "EMB Advogados",
     image: image14,
     type: ["Landing Page"],
-    url: "https://embadvogados.com.br/",
+    url: "",
   },
   {
     id: 13,
@@ -159,6 +163,34 @@ const projectsData = [
     image: image21,
     type: ["Empresarial"],
     url: "https://vitru360.com/",
+  },
+  {
+    id: 22,
+    name: "BioExecut",
+    image: image22,
+    type: ["Empresarial", "Blog"],
+    url: "https://bioexecut.com.br/",
+  },
+  {
+    id: 23,
+    name: "Porto de São Sebastião News",
+    image: image23,
+    type: ["Blog"],
+    url: "https://portodesaosebastiaonews.com.br/",
+  },
+  {
+    id: 24,
+    name: "Casa da Marcenaria",
+    image: image24,
+    type: ["Landing Page"],
+    url: "https://casadamarcenaria.online/",
+  },
+  {
+    id: 25,
+    name: "Up Comunidade Digital",
+    image: image25,
+    type: ["Landing Page"],
+    url: "https://upcomunidadedigital.com.br/",
   },
 ];
 
