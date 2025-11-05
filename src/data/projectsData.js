@@ -39,6 +39,13 @@ const projectsData = [
     url: null,
   },
   {
+    id: 21,
+    name: "Vitru",
+    image: image21,
+    type: ["Empresarial"],
+    url: "https://vitru360.com/",
+  },
+  {
     id: 3,
     name: "Julia Rossi | Blog de receitas",
     image: image12,
@@ -120,7 +127,7 @@ const projectsData = [
     name: "Aerolift",
     image: image15,
     type: "Empresarial",
-    url: null,
+    url: "https://aerolift.com.br/",
   },
   {
     id: 16,
@@ -157,13 +164,7 @@ const projectsData = [
     type: ["Empresarial", "Blog"],
     url: "https://www.mrshelbysbarbershop.com/",
   },
-  {
-    id: 21,
-    name: "Vitru",
-    image: image21,
-    type: ["Empresarial"],
-    url: "https://vitru360.com/",
-  },
+
   {
     id: 22,
     name: "BioExecut",
