@@ -46,6 +46,20 @@ const projectsData = [
     url: "https://vitru360.com/",
   },
   {
+    id: 15,
+    name: "Aerolift",
+    image: image15,
+    type: "Empresarial",
+    url: "https://aerolift.com.br/",
+  },
+  {
+    id: 18,
+    name: "Excelência BC",
+    image: image18,
+    type: ["Empresarial", "Blog"],
+    url: "https://excelenciabc.com/",
+  },
+  {
     id: 3,
     name: "Julia Rossi | Blog de receitas",
     image: image12,
@@ -122,13 +136,7 @@ const projectsData = [
     type: ["E-commerce"],
     url: "https://ecommerce-chair.onrender.com/",
   },
-  {
-    id: 15,
-    name: "Aerolift",
-    image: image15,
-    type: "Empresarial",
-    url: "https://aerolift.com.br/",
-  },
+
   {
     id: 16,
     name: "DPS Advogados",
@@ -143,13 +151,7 @@ const projectsData = [
     type: ["Empresarial", "Blog"],
     url: "https://omatic.com.br/",
   },
-  {
-    id: 18,
-    name: "Excelência BC",
-    image: image18,
-    type: ["Empresarial", "Blog"],
-    url: "https://excelenciabc.com/",
-  },
+
   {
     id: 19,
     name: "Iba Megastore",
