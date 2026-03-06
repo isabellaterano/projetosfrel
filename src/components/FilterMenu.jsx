@@ -8,6 +8,7 @@ const FilterMenu = ({ filter, setFilter }) => {
         "Blog",
         "E-commerce",
         "Portfólio",
+        "Agendamento",
         "Outros",
       ].map((category) => (
         <button

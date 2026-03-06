@@ -22,6 +22,9 @@ import image22 from "../assets/project22.png";
 import image23 from "../assets/project23.png";
 import image24 from "../assets/project24.png";
 import image25 from "../assets/project25.png";
+import image26 from "../assets/project26.png";
+import image27 from "../assets/project27.png";
+import image28 from "../assets/project28.png";
 
 const projectsData = [
   {
@@ -42,7 +45,7 @@ const projectsData = [
     id: 21,
     name: "Vitru",
     image: image21,
-    type: ["Empresarial"],
+    type: ["Empresarial", "Blog"],
     url: "https://vitru360.com/",
   },
   {
@@ -58,6 +61,34 @@ const projectsData = [
     image: image18,
     type: ["Empresarial", "Blog"],
     url: "https://excelenciabc.com/",
+  },
+  {
+    id: 28,
+    name: "Paraíso Cabeleireiro",
+    image: image28,
+    type: ["Empresarial", "Blog", "Agendamento"],
+    url: "https://paraisocabeleireiro.com/",
+  },
+  {
+    id: 20,
+    name: "Mr. Shelby's Barber",
+    image: image20,
+    type: ["Empresarial", "Blog"],
+    url: "https://www.mrshelbysbarbershop.com/",
+  },
+  {
+    id: 26,
+    name: "Amanda Monteiro Fotografia",
+    image: image26,
+    type: ["Empresarial", "Blog"],
+    url: "https://amandamonteirofotografia.com/",
+  },
+  {
+    id: 27,
+    name: "JM Assessoria",
+    image: image27,
+    type: ["Empresarial", "Blog"],
+    url: "",
   },
   {
     id: 3,
@@ -160,14 +191,6 @@ const projectsData = [
     url: "https://ibamegastore.com/",
   },
   {
-    id: 20,
-    name: "Mr. Shelby's Barber",
-    image: image20,
-    type: ["Empresarial", "Blog"],
-    url: "https://www.mrshelbysbarbershop.com/",
-  },
-
-  {
     id: 22,
     name: "BioExecut",
     image: image22,
@@ -186,7 +209,7 @@ const projectsData = [
     name: "Casa da Marcenaria",
     image: image24,
     type: ["Landing Page"],
-    url: "https://casadamarcenaria.online/",
+    url: "",
   },
   {
     id: 25,
