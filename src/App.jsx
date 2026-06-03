@@ -12,48 +12,53 @@ function App() {
       : projectsData.filter((project) => project.type.includes(filter));
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-950 via-neutral-900 to-black text-white font-roboto">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 py-12">
-        {/* Logo */}
-        <div className="flex justify-center mb-10">
+    <div className="min-h-screen bg-[#0a0a0a] text-white antialiased selection:bg-white selection:text-black">
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 py-16">
+        {/* Logo Section */}
+        <div className="flex justify-center mb-16">
           <img
             src="/logo.png"
-            alt="logo"
-            className="w-24 md:w-28 drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+            alt="Logo"
+            className="h-15 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 select-none pointer-events-none"
           />
         </div>
 
         {/* Hero Section */}
-        <section className="text-center max-w-5xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 mb-6 text-sm font-medium tracking-wide uppercase rounded-full bg-indigo-600/20 text-indigo-400 border border-indigo-500/20">
-            Portfólio Profissional
-          </span>
-
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-8 bg-gradient-to-r from-white via-indigo-300 to-purple-400 bg-clip-text text-transparent">
-            Projetos desenvolvidos com foco em performance, design e conversão
+        <section className="text-center max-w-5xl mx-auto mb-20">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] mb-6 bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
+            Design estratégico. <br className="hidden md:block" />
+            Alta performance. <br className="hidden md:block" />
+            Conversão real.
           </h1>
 
-          <p className="text-neutral-300 text-base md:text-lg leading-relaxed max-w-4xl mx-auto">
-            Confira alguns dos projetos que desenvolvi ao longo dos anos,
-            incluindo landing pages, páginas de vendas, sites institucionais,
-            empresariais, portfólios, blogs e aplicações web.
-            <br className="hidden md:block" />
-            Atuo desde o planejamento estratégico até o desenvolvimento,
-            otimização, redesign, manutenção e melhorias técnicas, sempre
-            priorizando usabilidade, experiência do usuário e alta performance.
+          <p className="text-neutral-400 text-base md:text-lg font-light leading-relaxed max-w-4xl mx-auto">
+            Sou desenvolvedora web especialista em criar e gerenciar
+            ecossistemas digitais de alto padrão. Unindo a precisão do código à
+            flexibilidade de plataformas como WordPress e Wix, ofereço soluções
+            completas: desde o desenvolvimento do zero até a manutenção técnica,
+            otimização de velocidade, segurança e melhorias contínuas para
+            manter sua presença digital rápida e altamente lucrativa.
           </p>
         </section>
 
         {/* Filter Menu */}
-        <FilterMenu filter={filter} setFilter={setFilter} />
+        <div className="mb-12">
+          <FilterMenu filter={filter} setFilter={setFilter} />
+        </div>
 
-        {/* Projects */}
-        <ProjectList projects={filteredProjects} />
+        {/* Projects Grid */}
+        <main>
+          <ProjectList projects={filteredProjects} />
+        </main>
 
-        {/* Footer */}
-        <footer className="mt-24 text-center border-t border-white/10 pt-8">
-          <p className="text-neutral-500 text-sm">
-            © {new Date().getFullYear()} Portfólio Profissional — IT
+        {/* Footer Minimalista */}
+        <footer className="mt-32 pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-neutral-600 text-xs tracking-wider uppercase font-mono">
+            &copy; {new Date().getFullYear()} &mdash; Engenharia Web & Soluções
+            Digitais
+          </p>
+          <p className="text-neutral-500 text-xs tracking-widest uppercase font-mono">
+            Estratégia &bull; Design &bull; Código
           </p>
         </footer>
       </div>

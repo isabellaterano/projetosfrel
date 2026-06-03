@@ -15,83 +15,88 @@ const ProjectList = ({ projects }) => {
   return (
     <div>
       {/* Grid de Projetos */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-md shadow-lg hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-3"
+            className="group bg-[#0d0d0d] border border-neutral-800/80 rounded-2xl overflow-hidden shadow-xl hover:border-neutral-500 transition-all duration-500 flex flex-col justify-between"
           >
-            {/* Imagem */}
-            <div className="relative overflow-hidden">
+            {/* Bloco de Imagem */}
+            <div className="relative overflow-hidden aspect-[16/10]">
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full h-72 object-cover cursor-pointer transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover cursor-pointer group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 group-hover:scale-105"
                 onClick={() => handleImageClick(project.image)}
                 loading="lazy"
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+              {/* Overlay Minimalista */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                 <button
                   onClick={() => handleImageClick(project.image)}
-                  className="text-sm font-medium px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-black transition"
+                  className="text-xs uppercase tracking-widest font-medium px-5 py-2.5 rounded-lg bg-white text-black hover:bg-neutral-200 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
                 >
-                  Visualizar Projeto
+                  Expandir Imagem
                 </button>
               </div>
 
-              {/* Featured Badge */}
+              {/* Badge de Destaque P&B */}
               {project.featured && (
-                <span className="absolute top-4 left-4 px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg">
+                <span className="absolute top-4 left-4 px-3 py-1 text-[10px] uppercase tracking-widest font-mono font-bold rounded-md bg-white text-black shadow-md">
                   Destaque
                 </span>
               )}
             </div>
 
-            {/* Conteúdo */}
-            <div className="p-7">
-              <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition">
-                {project.name}
-              </h2>
+            {/* Conteúdo do Card */}
+            <div className="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                {/* Categorias / Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {(Array.isArray(project.type)
+                    ? project.type
+                    : [project.type]
+                  ).map((type, index) => (
+                    <span
+                      key={index}
+                      className="px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-medium rounded border border-neutral-800 text-neutral-400 bg-neutral-900/50"
+                    >
+                      {type}
+                    </span>
+                  ))}
+                </div>
 
-              {/* Categorias */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {(Array.isArray(project.type)
-                  ? project.type
-                  : [project.type]
-                ).map((type, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 border border-white/10 text-neutral-300"
-                  >
-                    {type}
-                  </span>
-                ))}
+                {/* Título */}
+                <h2 className="text-xl font-bold text-white mb-2 tracking-tight transition-colors duration-300">
+                  {project.name}
+                </h2>
+
+                {/* Descrição (Adicionada) */}
+                <p className="text-sm text-neutral-400 font-light leading-relaxed mb-6 line-clamp-3">
+                  {project.description}
+                </p>
               </div>
 
-              {/* Botão */}
-              <div className="flex justify-end">
+              {/* Botão de Ação */}
+              <div className="flex justify-end pt-2 border-t border-neutral-900">
                 {project.url ? (
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/button inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 hover:scale-105"
+                    className="group/btn inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-white hover:text-neutral-400 transition-colors duration-300"
                   >
-                    Ver Projeto
+                    Acessar Site
                     <ArrowRight
-                      size={20}
-                      className="transition-transform duration-300 group-hover/button:-rotate-45"
+                      size={16}
+                      className="transition-transform duration-300 group-hover/btn:translate-x-1"
                     />
                   </a>
                 ) : (
-                  <button
-                    disabled
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-neutral-700 text-neutral-400 cursor-not-allowed"
-                  >
+                  <span className="text-xs uppercase tracking-widest font-medium text-neutral-600 select-none">
                     Indisponível
-                  </button>
+                  </span>
                 )}
               </div>
             </div>
@@ -99,27 +104,28 @@ const ProjectList = ({ projects }) => {
         ))}
       </div>
 
-      {/* Modal de Imagem */}
+      {/* Modal de Imagem Premium */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-6"
+          className="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-50 p-4 md:p-10 transition-all duration-300"
           onClick={handleCloseModal}
         >
           <div
-            className="relative max-w-7xl w-full flex justify-center items-center"
+            className="relative max-w-6xl w-full flex justify-center items-center"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={selectedImage}
-              alt="Projeto selecionado"
-              className="max-w-full max-h-[90vh] rounded-3xl shadow-2xl border border-white/10"
+              alt="Projeto expandido"
+              className="max-w-full max-h-[85vh] rounded-xl shadow-2xl border border-neutral-800"
             />
 
             <button
-              className="absolute top-4 right-4 bg-white/10 hover:bg-red-500 rounded-full p-2 text-white transition"
+              className="absolute -top-12 right-0 md:-right-12 text-neutral-400 hover:text-white transition-colors duration-200"
               onClick={handleCloseModal}
+              aria-label="Fechar modal"
             >
-              <XCircle size={36} />
+              <XCircle size={32} weight="light" />
             </button>
           </div>
         </div>
