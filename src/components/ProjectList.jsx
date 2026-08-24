@@ -1,5 +1,5 @@
-import { ArrowRight, XCircle } from "@phosphor-icons/react";
-import React, { useState } from "react";
+import { ArrowUpRight, X } from "@phosphor-icons/react";
+import React, { useEffect, useState } from "react";
 
 const ProjectList = ({ projects }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -12,120 +12,152 @@ const ProjectList = ({ projects }) => {
     setSelectedImage(null);
   };
 
+  // Fecha o modal com ESC
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+
+    if (selectedImage) {
+      document.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
+
   return (
     <div>
       {/* Grid de Projetos */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
         {projects.map((project) => (
-          <div
+          <article
             key={project.id}
-            className="group bg-[#0d0d0d] border border-neutral-800/80 rounded-2xl overflow-hidden shadow-xl hover:border-neutral-500 transition-all duration-500 flex flex-col justify-between"
+            className="group bg-[#0c0c0c] border border-neutral-900 rounded-2xl overflow-hidden hover:border-neutral-700 transition-all duration-500 flex flex-col"
           >
-            {/* Bloco de Imagem */}
-            <div className="relative overflow-hidden aspect-[16/10]">
+            {/* Imagem */}
+            <div
+              className="relative overflow-hidden aspect-[16/10] bg-neutral-900 cursor-zoom-in"
+              onClick={() => handleImageClick(project.image)}
+            >
               <img
                 src={project.image}
-                alt={project.name}
-                className="w-full h-full object-cover cursor-pointer group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 group-hover:scale-105"
-                onClick={() => handleImageClick(project.image)}
+                alt={`${project.name} — projeto desenvolvido por Isabella T.`}
+                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.04]"
                 loading="lazy"
               />
 
-              {/* Overlay Minimalista */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                <button
-                  onClick={() => handleImageClick(project.image)}
-                  className="text-xs uppercase tracking-widest font-medium px-5 py-2.5 rounded-lg bg-white text-black hover:bg-neutral-200 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
-                >
-                  Expandir Imagem
-                </button>
-              </div>
+              {/* Gradiente */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 pointer-events-none" />
 
-              {/* Badge de Destaque P&B */}
+              {/* Destaque */}
               {project.featured && (
-                <span className="absolute top-4 left-4 px-3 py-1 text-[10px] uppercase tracking-widest font-mono font-bold rounded-md bg-white text-black shadow-md">
+                <span className="absolute top-4 left-4 px-3 py-1.5 text-[9px] uppercase tracking-[0.2em] font-semibold rounded-full bg-white text-black">
                   Destaque
                 </span>
               )}
+
+              {/* Expandir */}
+              <div className="absolute inset-x-0 bottom-0 p-5 flex justify-end opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black text-[10px] uppercase tracking-[0.15em] font-semibold">
+                  Ver projeto
+                  <ArrowUpRight size={14} weight="bold" />
+                </span>
+              </div>
             </div>
 
-            {/* Conteúdo do Card */}
-            <div className="p-6 flex flex-col flex-grow justify-between">
-              <div>
-                {/* Categorias / Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {(Array.isArray(project.type)
-                    ? project.type
-                    : [project.type]
-                  ).map((type, index) => (
-                    <span
-                      key={index}
-                      className="px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-medium rounded border border-neutral-800 text-neutral-400 bg-neutral-900/50"
-                    >
-                      {type}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Título */}
-                <h2 className="text-xl font-bold text-white mb-2 tracking-tight transition-colors duration-300">
-                  {project.name}
-                </h2>
-
-                {/* Descrição (Adicionada) */}
-                <p className="text-sm text-neutral-400 font-light leading-relaxed mb-6 line-clamp-3">
-                  {project.description}
-                </p>
+            {/* Conteúdo */}
+            <div className="p-6 md:p-7 flex flex-col flex-grow">
+              {/* Categorias */}
+              <div className="flex flex-wrap gap-2 mb-5">
+                {(Array.isArray(project.type)
+                  ? project.type
+                  : [project.type]
+                ).map((type, index) => (
+                  <span
+                    key={index}
+                    className="text-[9px] uppercase tracking-[0.16em] font-medium text-neutral-500"
+                  >
+                    {type}
+                    {index <
+                      (Array.isArray(project.type)
+                        ? project.type.length
+                        : 1) -
+                        1 && <span className="ml-2 text-neutral-800">/</span>}
+                  </span>
+                ))}
               </div>
 
-              {/* Botão de Ação */}
-              <div className="flex justify-end pt-2 border-t border-neutral-900">
+              {/* Nome */}
+              <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-white mb-3">
+                {project.name}
+              </h2>
+
+              {/* Descrição */}
+              {project.description && (
+                <p className="text-sm text-neutral-500 font-light leading-relaxed line-clamp-3 mb-7">
+                  {project.description}
+                </p>
+              )}
+
+              {/* Ação */}
+              <div className="mt-auto pt-5 border-t border-neutral-900">
                 {project.url ? (
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-white hover:text-neutral-400 transition-colors duration-300"
+                    className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] font-semibold text-neutral-300 hover:text-white transition-colors duration-300"
                   >
-                    Acessar Site
-                    <ArrowRight
-                      size={16}
-                      className="transition-transform duration-300 group-hover/btn:translate-x-1"
+                    Acessar projeto
+                    <ArrowUpRight
+                      size={15}
+                      weight="bold"
+                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </a>
                 ) : (
-                  <span className="text-xs uppercase tracking-widest font-medium text-neutral-600 select-none">
-                    Indisponível
+                  <span className="text-[10px] uppercase tracking-[0.18em] font-medium text-neutral-700">
+                    Projeto indisponível
                   </span>
                 )}
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
 
-      {/* Modal de Imagem Premium */}
+      {/* Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-50 p-4 md:p-10 transition-all duration-300"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
           onClick={handleCloseModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Visualização ampliada do projeto"
         >
           <div
-            className="relative max-w-6xl w-full flex justify-center items-center"
-            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-7xl w-full flex items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
           >
             <img
               src={selectedImage}
-              alt="Projeto expandido"
-              className="max-w-full max-h-[85vh] rounded-xl shadow-2xl border border-neutral-800"
+              alt="Visualização ampliada do projeto"
+              className="max-w-full max-h-[88vh] object-contain rounded-lg shadow-2xl"
             />
 
             <button
-              className="absolute -top-12 right-0 md:-right-12 text-neutral-400 hover:text-white transition-colors duration-200"
+              type="button"
               onClick={handleCloseModal}
-              aria-label="Fechar modal"
+              aria-label="Fechar imagem"
+              className="absolute top-3 right-3 md:top-0 md:-right-14 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-neutral-300 hover:bg-white hover:text-black transition-all duration-300"
             >
-              <XCircle size={32} weight="light" />
+              <X size={20} weight="bold" />
             </button>
           </div>
         </div>
@@ -135,3 +167,4 @@ const ProjectList = ({ projects }) => {
 };
 
 export default ProjectList;
+

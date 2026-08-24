@@ -8,309 +8,350 @@ const projectsData = [
     id: 1,
     name: "Agência Digital",
     description:
-      "Plataforma institucional de alta conversão projetada para agências de tecnologia, focada em performance e interface minimalista.",
+      "Site institucional desenvolvido para uma agência de tecnologia, com foco em apresentação dos serviços, navegação clara e uma experiência visual moderna.",
     image: projectImages["../assets/project2.png"],
     type: ["Empresarial"],
     url: "https://digitalagency-forge.netlify.app/",
     featured: true,
   },
+
   {
     id: 2,
     name: "Corretora de Planos de Saúde",
     description:
-      "Landing page corporativa estruturada para alta conversão, otimizada para captação de leads qualificados e funil de vendas.",
+      "Landing page desenvolvida para captação de leads, apresentando os serviços de forma objetiva e direcionando o visitante para o contato comercial.",
     image: projectImages["../assets/project13.png"],
     type: ["Landing Page"],
     url: null,
     featured: false,
   },
+
   {
     id: 3,
     name: "Agência de Marketing",
     description:
-      "Solução web corporativa com blog integrado, desenvolvida para automação de conteúdo e posicionamento de marca.",
+      "Site institucional com estrutura de blog, pensado para apresentação dos serviços, publicação de conteúdo e fortalecimento da presença digital da marca.",
     image: projectImages["../assets/project21.png"],
     type: ["Empresarial", "Blog"],
-    url: "https://vitru360.com/",
-    featured: true,
+    url: null,
+    featured: false,
   },
+
   {
     id: 4,
-    name: "Locação de máquinas e equipamentos para construção",
+    name: "Locação de Máquinas e Equipamentos",
     description:
-      "Plataforma corporativa de alta performance para a locação de máquinas e equipamentos.",
+      "Site corporativo desenvolvido para apresentar equipamentos, serviços e informações comerciais de forma organizada e acessível.",
     image: projectImages["../assets/project15.png"],
     type: ["Empresarial"],
     url: "https://aerolift.com.br/",
     featured: true,
   },
+
   {
     id: 5,
     name: "Limpeza Predial",
     description:
-      "Portal corporativo com arquitetura focada em SEO local e seção dinâmica de blog para atração de clientes orgânicos.",
+      "Site corporativo com estrutura voltada para serviços de limpeza e facilities, incluindo conteúdo estratégico e seção de blog para presença orgânica.",
     image: projectImages["../assets/project18.png"],
     type: ["Empresarial", "Blog"],
     url: "https://excelenciabc.com/",
-    featured: false,
+    featured: true,
   },
+
   {
     id: 6,
     name: "Locação de Escritórios",
     description:
-      "Site institucional de alto padrão para o setor imobiliário corporativo, voltada para a locação de salas e andares comerciais.",
+      "Site institucional para locação de salas e espaços comerciais, desenvolvido para apresentar os ambientes, serviços e informações de forma elegante e objetiva.",
     image: projectImages["../assets/project3.png"],
     type: ["Empresarial"],
     url: "https://idealofficesmorumbi.com.br/",
     featured: true,
   },
+
   {
     id: 7,
     name: "Salão de Beleza",
     description:
-      "Interface institucional moderna com sistema integrado de agendamento online e painel de serviços de estética.",
+      "Site institucional para salão de beleza, com apresentação de serviços, informações sobre o espaço e integração com agendamento online.",
     image: projectImages["../assets/project28.png"],
-    type: ["Empresarial", "Blog", "Agendamento"],
+    type: ["Empresarial", "Agendamento"],
     url: "https://paraisocabeleireiro.com/",
     featured: true,
   },
+
   {
     id: 8,
     name: "Barbearia",
     description:
-      "Página institucional com estética refinada e foco na experiência do usuário, idealizada para conversão de novos clientes.",
+      "Site institucional desenvolvido para uma barbearia, com identidade visual marcante, apresentação dos serviços e foco na geração de novos contatos.",
     image: projectImages["../assets/project20.png"],
-    type: ["Empresarial", "Blog"],
+    type: ["Empresarial"],
     url: "https://www.mrshelbysbarbershop.com/",
     featured: true,
   },
+
   {
     id: 9,
+    name: "Clínica Médica",
+    description:
+      "Site institucional desenvolvido para comunicar autoridade e credibilidade, apresentando serviços e informações de forma acolhedora e facilitando o contato com novos pacientes.",
+    image: projectImages["../assets/project33.png"],
+    type: ["Empresarial"],
+    url: "https://dramarciamachado.com.br/",
+    featured: true,
+  },
+
+  {
+    id: 10,
     name: "Serviços de Climatização",
     description:
-      "Plataforma técnica focada em prestação de serviços residenciais e industriais com carregamento ultra-rápido.",
+      "Site corporativo para serviços de climatização residencial e industrial, estruturado para apresentar soluções e facilitar o contato com potenciais clientes.",
     image: projectImages["../assets/project29.png"],
     type: ["Empresarial", "Blog"],
     url: "https://floripaclimatizacao.com.br/",
     featured: false,
   },
+
   {
-    id: 10,
+    id: 11,
     name: "Página de Produto",
     description:
-      "Landing page minimalista para e-commerce de produto único, explorando tipografia limpa e alto contraste visual.",
+      "Landing page para apresentação de um produto, utilizando uma estrutura visual simples e objetiva para destacar características e benefícios.",
     image: projectImages["../assets/project30.png"],
     type: ["Landing Page"],
     url: "https://smartbottle.onrender.com",
     featured: true,
   },
+
   {
-    id: 11,
+    id: 12,
     name: "Estúdio Fotográfico",
     description:
-      "Portfólio minimalista otimizado para carregamento inteligente de imagens em alta resolução sem perda de performance.",
+      "Portfólio digital desenvolvido para valorizar trabalhos fotográficos, com foco na apresentação das imagens e em uma experiência de navegação visual.",
     image: projectImages["../assets/project26.png"],
     type: ["Portfólio"],
     url: null,
     featured: false,
   },
+
   {
-    id: 12,
+    id: 13,
     name: "Clínica Odontológica",
     description:
-      "Landing page para o setor de saúde privada de alto padrão, combinando elegância visual e agilidade na navegação.",
+      "Landing page para clínica odontológica, combinando apresentação dos serviços, comunicação profissional e navegação simples para facilitar o contato.",
     image: projectImages["../assets/project32.png"],
     type: ["Landing Page"],
     url: "https://odontoprime-jjwl.onrender.com",
     featured: true,
   },
+
   {
-    id: 13,
+    id: 14,
     name: "Segurança do Trabalho",
     description:
-      "Portal corporativo para assessoria regulamentar e compliance, organizado por módulos de fácil leitura.",
+      "Site corporativo para empresa de segurança do trabalho, organizado para apresentar serviços, informações regulamentares e conteúdos de apoio.",
     image: projectImages["../assets/project27.png"],
     type: ["Empresarial", "Blog"],
     url: null,
     featured: false,
   },
+
   {
-    id: 14,
+    id: 15,
     name: "Blog de Receitas",
     description:
-      "Aplicação dinâmica voltada para a legibilidade fluida de conteúdos culinários e filtros assíncronos por categorias.",
+      "Aplicação de conteúdo culinário com organização por categorias, navegação simples e estrutura desenvolvida para facilitar a leitura das receitas.",
     image: projectImages["../assets/project12.png"],
     type: ["Blog"],
     url: "https://receitasdajulia.vercel.app/",
     featured: true,
   },
+
   {
-    id: 15,
+    id: 16,
     name: "Serviços de Limpeza",
     description:
-      "Landing page interativa com foco comercial para contratação de facilities residenciais e comerciais de forma prática.",
+      "Landing page comercial para serviços de limpeza residencial e empresarial, desenvolvida com foco em apresentação dos serviços e geração de contatos.",
     image: projectImages["../assets/project4.png"],
     type: ["Landing Page"],
     url: "https://limpapro.onrender.com",
     featured: true,
   },
+
   {
-    id: 16,
+    id: 17,
     name: "Portfólio Técnico",
     description:
-      "Showcase digital projetado para engenharia de software, priorizando uma arquitetura de informação clara e direta.",
+      "Portfólio profissional para área de tecnologia, organizado para apresentar experiência, competências e projetos de forma clara e objetiva.",
     image: projectImages["../assets/project11.png"],
     type: ["Portfólio"],
     url: "https://johnmillerportfolio.netlify.app/",
     featured: true,
   },
+
   {
-    id: 17,
+    id: 18,
     name: "Portfólio Criativo",
     description:
-      "Interface interativa voltada para o setor de design, onde a tipografia estruturada dita o ritmo visual da experiência.",
+      "Portfólio digital desenvolvido para profissional de design, utilizando uma identidade visual marcante e uma apresentação focada nos trabalhos.",
     image: projectImages["../assets/project10.png"],
     type: ["Portfólio"],
     url: "https://portfoliomariemancini.netlify.app/",
     featured: true,
   },
+
   {
-    id: 18,
+    id: 19,
     name: "Estúdio de Tatuagem",
     description:
-      "Site institucional com temática dark e design autoral, otimizado para conversão direta via canais de atendimento.",
+      "Site institucional com identidade visual dark, apresentação do estúdio e estrutura direcionada para facilitar o contato e agendamento.",
     image: projectImages["../assets/project5.png"],
     type: ["Empresarial"],
     url: "https://skulltattoostudio.netlify.app/",
     featured: true,
   },
+
   {
-    id: 19,
+    id: 20,
     name: "Portfólio de Fotografia",
     description:
-      "Galeria digital premium com transições sofisticadas e grids assimétricos para valorização de produções visuais.",
+      "Galeria digital desenvolvida para apresentar trabalhos fotográficos com destaque para as imagens e uma navegação visual fluida.",
     image: projectImages["../assets/project9.png"],
     type: ["Portfólio"],
     url: "https://portfolio-photography-coral.vercel.app/",
     featured: true,
   },
+
   {
-    id: 20,
+    id: 21,
     name: "Clínica Veterinária",
     description:
-      "Interface acolhedora e intuitiva desenvolvida para apresentação de serviços médicos e contato emergencial.",
+      "Site institucional para clínica veterinária, com apresentação dos serviços, informações para tutores e acesso facilitado aos canais de contato.",
     image: projectImages["../assets/project8.png"],
     type: ["Empresarial"],
     url: "https://petcareclinicavet.netlify.app/",
     featured: true,
   },
+
   {
-    id: 21,
+    id: 22,
     name: "Plataforma SaaS",
     description:
-      "Interface moderna de produto voltada para o mercado de inteligência artificial, utilizando padrões estéticos futuristas e limpos.",
+      "Landing page para produto digital voltado ao mercado de inteligência artificial, com foco na apresentação da solução e de seus principais recursos.",
     image: projectImages["../assets/project31.png"],
     type: ["Landing Page"],
     url: "https://syntrixai.onrender.com",
     featured: true,
   },
+
   {
-    id: 22,
+    id: 23,
     name: "Portfólio de Desenvolvedor",
     description:
-      "Apresentação profissional de competências em tecnologia e desenvolvimento de sistemas com layout sóbrio.",
+      "Portfólio profissional desenvolvido para apresentar projetos, competências técnicas e experiência na área de desenvolvimento.",
     image: projectImages["../assets/project7.png"],
     type: ["Portfólio"],
     url: "https://jaspereverettportfolio.netlify.app/",
     featured: true,
   },
+
   {
-    id: 23,
+    id: 24,
     name: "E-commerce de Cadeiras",
     description:
-      "Conceito de comércio eletrônico focado no segmento de mobiliário corporativo e residencial de alto padrão.",
+      "Conceito de loja virtual para mobiliário, estruturado para apresentar produtos, categorias e informações de compra de forma organizada.",
     image: projectImages["../assets/project1.png"],
     type: ["E-commerce"],
     url: "https://ecommerce-chair.onrender.com/",
     featured: true,
   },
+
   {
-    id: 24,
+    id: 25,
     name: "Consultoria Estratégica",
     description:
-      "Portal institucional focado no mercado corporativo B2B, transmitindo solidez e autoridade comercial.",
+      "Site institucional voltado ao mercado B2B, desenvolvido para apresentar serviços de consultoria e fortalecer a presença digital da empresa.",
     image: projectImages["../assets/project17.png"],
     type: ["Empresarial", "Blog"],
     url: "https://omatic.com.br/",
     featured: false,
   },
+
   {
-    id: 25,
+    id: 26,
     name: "E-commerce de Acessórios",
     description:
-      "Loja virtual completa com arquitetura robusta voltada para a venda de peças e vestuário técnico para motociclistas.",
+      "Loja virtual desenvolvida para comercialização de acessórios e vestuário para motociclistas, com estrutura voltada para navegação e produtos.",
     image: projectImages["../assets/project19.png"],
     type: ["E-commerce", "Blog"],
     url: "https://ibamegastore.com/",
     featured: true,
   },
-  {
-    id: 26,
-    name: "Gestão de Tráfego",
-    description:
-      "Landing page de alta conversão estruturada com foco em captação de leads para lançamentos digitais e negócios locais.",
-    image: projectImages["../assets/project25.png"],
-    type: ["Landing Page"],
-    url: "https://upcomunidadedigital.com.br/",
-    featured: true,
-  },
+
   {
     id: 27,
-    name: "Escritório de Advocacia",
+    name: "Gestão de Tráfego",
     description:
-      "Site institucional planejado para o setor jurídico corporativo, unindo seriedade, elegância e clareza de informações.",
-    image: projectImages["../assets/project16.png"],
+      "Landing page comercial desenvolvida para apresentação de serviços de gestão de tráfego e captação de novos clientes.",
+    image: projectImages["../assets/project25.png"],
     type: ["Landing Page"],
     url: null,
     featured: false,
   },
+
   {
     id: 28,
-    name: "Consultoria de Agronegócio",
+    name: "Escritório de Advocacia",
     description:
-      "Portal corporativo especializado no setor agro e sustentabilidade energética, projetado para transmitir segurança e liderança.",
-    image: projectImages["../assets/project22.png"],
-    type: ["Empresarial", "Blog"],
+      "Site institucional para escritório de advocacia, com comunicação profissional, organização clara das informações e apresentação dos serviços.",
+    image: projectImages["../assets/project16.png"],
+    type: ["Empresarial"],
     url: null,
     featured: false,
   },
+
   {
     id: 29,
-    name: "Portal Jornalístico",
+    name: "Consultoria de Agronegócio",
     description:
-      "Plataforma de notícias com layout dinâmico em grid responsivo, idealizada para legibilidade e alto volume de acessos.",
-    image: projectImages["../assets/project23.png"],
-    type: ["Blog"],
-    url: "https://portodesaosebastiaonews.com.br/",
+      "Site corporativo para empresa do setor de agronegócio e sustentabilidade, desenvolvido para apresentar soluções, serviços e informações institucionais.",
+    image: projectImages["../assets/project22.png"],
+    type: ["Empresarial", "Blog"],
+    url: "https://bioexecut.com.br/",
     featured: false,
   },
+
   {
     id: 30,
+    name: "Portal Jornalístico",
+    description:
+      "Portal de notícias estruturado para organizar grande volume de conteúdo em uma experiência responsiva e fácil de navegar.",
+    image: projectImages["../assets/project23.png"],
+    type: ["Blog"],
+    url: null,
+    featured: false,
+  },
+
+  {
+    id: 31,
     name: "Página de Vendas",
     description:
-      "Landing page de conversão cirúrgica para infoprodutos, aplicando gatilhos de usabilidade e design focado em resultados.",
+      "Landing page desenvolvida para apresentação e venda de um produto digital, com estrutura focada em clareza, navegação e conversão.",
     image: projectImages["../assets/project24.png"],
     type: ["Landing Page"],
     url: null,
     featured: false,
   },
+
   {
-    id: 31,
+    id: 32,
     name: "Escritório de Advocacia",
     description:
-      "Interface corporativa voltada para advocacia premium, comunicando compliance, profissionalismo e alta credibilidade.",
+      "Site institucional para advocacia, desenvolvido com uma identidade visual sóbria e foco em transmitir profissionalismo, confiança e credibilidade.",
     image: projectImages["../assets/project14.png"],
-    type: ["Landing Page"],
+    type: ["Empresarial"],
     url: null,
     featured: false,
   },
